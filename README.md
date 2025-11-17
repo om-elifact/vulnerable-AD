@@ -35,6 +35,7 @@ Install-ADDSForest -CreateDnsDelegation:$false -DatabasePath "C:\\Windows\\NTDS"
 # if you already installed Active Directory, just run the script !
 IEX((new-object net.webclient).downloadstring("https://raw.githubusercontent.com/wazehell/vulnerable-AD/master/vulnad.ps1"));
 Invoke-VulnAD -UsersLimit 100 -DomainName "cs.org"
+Add-WindowsFeature RSAT-ADDS-Tools
 ```
 
 ### TODO
